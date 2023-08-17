@@ -1,7 +1,10 @@
+import Navbar from '@/components/Navbar'
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { DM_Sans } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const dmSans = DM_Sans({ 
+  weight:['400','500','700'],
+  subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={dmSans.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   )
 }

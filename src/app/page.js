@@ -1,113 +1,358 @@
-import Image from 'next/image'
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { FaUtensils} from "react-icons/fa";
+import { LiaEnvira } from "react-icons/lia";
+import { BsFillDropletFill } from "react-icons/bs";
+import { Oswald } from "next/font/google";
+import {AiOutlineCheck} from "react-icons/ai"
+import { useState } from "react";
+import { all, beverage, food, snack } from "@/help/Data";
+
+
+
+const oswald = Oswald({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function Home() {
+
+  const [isActive, setIsActive] = useState(1)
+  const handleActive = (btn) => setIsActive(btn)
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <main>
+      {/* Home */}
+      <section>
+        <div className="container flex flex-col md:flex-row items-center gap-10">
+          <div className="mx-auto md:basis-1/2 lg:basis-2/5 animate-movingY">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              className="w-60 md:w-full"
+              src="/assets/img/home-image.png"
+              alt="hero-image"
+              width={200}
+              height={200}
             />
-          </a>
+          </div>
+          <div className="text-center md:basis-1/2 md:text-start lg:basis-3/5 ">
+            <h1 className={`hero__title ${oswald.className}`}>
+              happy tummy with tasty burgers.
+            </h1>
+            <div className="separator mx-auto md:mx-0"></div>
+            <p className="paragraph">
+              Lorem ipsum dolor sit amet. Non earum aperiam qui omnis soluta aut
+              fuga deserunt eos omnis quam ut amet quaerat ut asperiores dolorum
+              et asperiores delectus. Cum impedit tenetur et reprehenderit
+              dolorem est deserunt quod sed suscipit aperiam.
+            </p>
+            <div className="text-base flex items-center justify-center md:justify-start md:gap-20 gap-4 py-10">
+              <div className="text-center">
+                <FaUtensils className="text-4xl mx-auto text-secondaryColor text-center" />
+                <br />
+                Delicious
+              </div>
+              <div className="text-center">
+                <BsFillDropletFill className="text-4xl mx-auto text-secondaryColor text-center" />
+                <br />
+                Fresh
+              </div>
+              <div className="text-center">
+                <LiaEnvira className="text-4xl mx-auto text-secondaryColor text-center" />
+                <br />
+                Organic
+              </div>
+            </div>
+            <Link href="/" className="btn btn-primary">
+              learn more
+            </Link>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      {/* category */}
+      <section id="category">
+        <div className="container flex flex-col gap-5 md:flex-row">
+          {/* card-1 */}
+          <div className="bg-secondaryColor flex py-3 rounded-lg overflow-hidden md:flex-1">
+            <div className="basis-1/3 relative">
+              <Image
+                className="absolute w-28 -bottom-4 -left-4"
+                src="/assets/img/burger-1.png"
+                alt=""
+                width={150}
+                height={150}
+              />
+            </div>
+            <div>
+              <div className="mb-2">
+                <h4 className="card__title">all</h4>
+                <p className="text-xs">Lorem ipsum dolor sit.</p>
+              </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+              <Link className="text-blackColor cursor-pointer" href="#">
+                Buy Online
+              </Link>
+            </div>
+          </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          {/* card-1 */}
+          <div className="bg-redColor flex py-3 rounded-lg overflow-hidden md:flex-1">
+            <div className="basis-1/3 relative">
+              <Image
+                className="absolute w-28 -bottom-4 -left-4"
+                src="/assets/img/snack-1.png"
+                alt=""
+                width={150}
+                height={150}
+              />
+            </div>
+            <div>
+              <div className="mb-2">
+                <h4 className="card__title">all</h4>
+                <p className="text-xs">Lorem ipsum dolor sit.</p>
+              </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
+              <Link className="text-secondaryColor cursor-pointer" href="#">
+                Buy Online
+              </Link>
+            </div>
+          </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          {/* card-3 */}
+          <div className="bg-greenColor flex py-3 rounded-lg overflow-hidden md:flex-1">
+            <div className="basis-1/3 relative">
+              <Image
+                className="absolute w-28 -bottom-4 -left-4"
+                src="/assets/img/beverage-2.png"
+                alt=""
+                width={150}
+                height={150}
+              />
+            </div>
+            <div>
+              <div className="mb-2">
+                <h4 className="card__title">all</h4>
+                <p className="text-xs">Lorem ipsum dolor sit.</p>
+              </div>
+
+              <Link className="text-secondaryColor cursor-pointer" href="#">
+                Buy Online
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* promo */}
+      <section id="promo">
+        <div className="container flex flex-col gap-5 lg:flex-row lg:gap-10">
+          {/* card-1 */}
+          <div className="bg-primaryColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1 ">
+            <Image
+              className="w-40 mx-auto hover:animate-movingY md:mx-5"
+              src="/assets/img/promo-1.png"
+              alt="promo-image"
+              width={300}
+              height={300}
+            />
+
+            <div className="space-y-2 pt-5 md:pt-0">
+              <p className="text-xs text-secondaryColor">Payday Promo</p>
+              <h3 className="card__title">GET A 10% DISCOUNT ON PAYDAY WEEK</h3>
+              <p className="paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <Link className="text-xs text-secondaryColor" href="#">
+                Buy Online
+              </Link>
+            </div>
+          </div>
+          {/* card-2 */}
+          <div className="bg-primaryColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1 ">
+            <Image
+              className="w-40 mx-auto hover:animate-movingY md:mx-5"
+              src="/assets/img/promo-2.png"
+              alt="promo-image"
+              width={300}
+              height={300}
+            />
+
+            <div className="space-y-2 pt-5 md:pt-0">
+              <p className="text-xs text-secondaryColor">Payday Promo</p>
+              <h3 className="card__title">GET A 10% DISCOUNT ON PAYDAY WEEK</h3>
+              <p className="paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <Link className="text-xs text-secondaryColor" href="#">
+                Buy Online
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* about */}
+      <section id="about">
+        <div className="container flex flex-col gap-10 md:flex-row">
+          <div className="flex-1"><Image className="rounded-lg" src='/assets/img/about.jpg' alt='about-image' width={500} height={500} /> </div>
+          <div className="flex-1">
+            <h2 className="section__title">FIND all AND DRINKS , ALL-IN-ONE PLACE FOR YOUR BEST TASTE.</h2>
+            <div className="separator"></div>
+            <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat nibh ut sapien elementum hendrerit. </p>
+            <ul className="grid grid-cols-2 py-5 space-y-1">
+              <li className="text-xs text-paragraphColor flex flex-row items-center">
+                <AiOutlineCheck className="text-secondaryColor me-2" /> 
+                Best Price
+              </li>
+              <li className="text-xs text-paragraphColor flex flex-row "><AiOutlineCheck className="text-secondaryColor me-2" /> Fresh Ingredient</li>
+              <li className="text-xs text-paragraphColor flex flex-row "><AiOutlineCheck className="text-secondaryColor me-2" /> Best Service</li>
+              <li className="text-xs text-paragraphColor flex flex-row "><AiOutlineCheck className="text-secondaryColor me-2" /> Health Protocol</li>
+              <Link href="#" className="btn btn-primary">About Us</Link>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* menu */}
+      <section id="menu">
+        <div className="container">
+          <div className="max-w-md mx-auto text-center">
+            <h2 className="section__title">OUR BEST MENU</h2>
+            <div className="separator mx-auto"></div>
+            <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat nibh ut sapien elementum hendrerit.</p>
+            <div className="tabs_wrap">
+              <ul className="flex flex-wrap justify-center gap-3 py-10">
+                <li className={`btn bg-primaryColorLight ${isActive===1 ? 'active' : ''}`} onClick={()=> handleActive(1)}>All</li>
+                <li className={`btn bg-primaryColorLight ${isActive===2 ? 'active' : ''}`}  onClick={()=> handleActive(2)}>Food</li>
+                <li className={`btn bg-primaryColorLight ${isActive===3 ? 'active' : ''}`}  onClick={()=> handleActive(3)}>Snack</li>
+                <li className={`btn bg-primaryColorLight ${isActive===4 ? 'active' : ''}`}  onClick={()=> handleActive(4)}>Beverage</li>
+              </ul>
+            </div>
+          </div>
+          {
+              isActive===1 && (
+                <div>
+                  <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+                    {/* all */}
+                   {
+                      all.map((item,index)=>{
+                        return (
+                          <li key={index}className="item_wrap">
+                          <div className="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+                            <Image className="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24" src={item.image} alt='all image' width={500} height={500} />
+                          </div>
+                          <div className="pt-5">
+                            <div className="mb-2">
+                              <h4 className="card__title">{item.title}</h4>
+                              <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+    
+                            <p className="text-secondaryColor">$42.00</p>
+                          </div>
+                        </li>
+                        )
+                      })
+                   }
+                  </ul>
+                </div>
+              )
+          }
+
+            {/* food  */}
+            {
+              isActive===2 && (
+                <div>
+                  <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+                    {/* food */}
+                   {
+                      food.map((item,index)=>{
+                        return (
+                          <li key={index}>
+                          <div className="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+                            <Image className="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24" src={item.image} alt='all image' width={500} height={500} />
+                          </div>
+                          <div className="pt-5">
+                            <div className="mb-2">
+                              <h4 className="card__title">{item.image}</h4>
+                              <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+    
+                            <p className="text-secondaryColor">$42.00</p>
+                          </div>
+                        </li>
+                        )
+                      })
+                   }
+                  </ul>
+                </div>
+              )
+          }
+
+          {/* snack  */}
+          {
+              isActive===3 && (
+                <div>
+                  <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+                    {/* snack */}
+                   {
+                      snack.map((item,index)=>{
+                        return (
+                          <li key={index}>
+                          <div className="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+                            <Image className="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24" src={item.image} alt='all image' width={500} height={500} />
+                          </div>
+                          <div className="pt-5">
+                            <div className="mb-2">
+                              <h4 className="card__title">{item.title}</h4>
+                              <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+    
+                            <p className="text-secondaryColor">$42.00</p>
+                          </div>
+                        </li>
+                        )
+                      })
+                   }
+                  </ul>
+                </div>
+              )
+          }
+
+             {/* beverage  */}
+             {
+              isActive===4 && (
+                <div>
+                  <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+                    {/* beverage */}
+                   {
+                      beverage.map((item,index)=>{
+                        return (
+                          <li key={index}>
+                          <div className="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+                            <Image className="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24" src={item.image} alt='all image' width={500} height={500} />
+                          </div>
+                          <div className="pt-5">
+                            <div className="mb-2">
+                              <h4 className="card__title">{item.title}</h4>
+                              <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+    
+                            <p className="text-secondaryColor">$42.00</p>
+                          </div>
+                        </li>
+                        )
+                      })
+                   }
+                  </ul>
+                </div>
+              )
+          }
+        </div>
+      </section>
+
+      {/* Review */}
+      <section id="review"></section>
     </main>
-  )
+  );
 }
