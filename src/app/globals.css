@@ -38,6 +38,9 @@
      .paragraph{
         @apply text-paragraphColor text-xs leading-5;
      }
+     .myswipper{
+        @apply w-96
+     }
 }
 
 .tabs_wrap ul li:hover,
