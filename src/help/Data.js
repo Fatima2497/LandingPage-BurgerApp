@@ -49,7 +49,7 @@ export const all = [
     },
     {
         image:"/assets/img/beverage-3.png",
-        title:"Strawberry Smoothie"
+        title:"Strawberry"
     },
     {
         image:"/assets/img/beverage-4.png",
@@ -118,7 +118,7 @@ export const beverage = [
     },
     {
         image:"/assets/img/beverage-3.png",
-        title:"Strawberry Smoothie"
+        title:"Strawberry"
     },
     {
         image:"/assets/img/beverage-4.png",

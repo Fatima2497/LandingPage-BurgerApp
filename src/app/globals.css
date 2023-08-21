@@ -4,7 +4,7 @@
 
 @layer base{
     body{
-        @apply bg-primaryColor text-white tracking-wider;
+        @apply bg-darkkColor text-white tracking-wider;
     }
     section {
         @apply pt-16 pb-4 md:pt-20;
@@ -39,7 +39,7 @@
         @apply text-paragraphColor text-xs leading-5;
      }
      .myswipper{
-        @apply w-96
+        @apply w-80
      }
 }
 

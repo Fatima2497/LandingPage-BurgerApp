@@ -3,8 +3,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiMenuAlt1 } from "react-icons/hi";
-import { BiMoon } from "react-icons/bi";
 import { Oswald } from "next/font/google";
+
 
 const oswald = Oswald({
     weight: ['400','500','600','700'],
@@ -16,11 +16,14 @@ const Navbar = () => {
     
   const [isMenu, setIsMenu] = useState(false)
 
+ 
+
+
   const toggleMenu = () => {
     setIsMenu(true)
   }
     return (
-    <header className="bg-primaryColor fixed top-0 left-0 w-full z-50">
+    <header className="bg-darkkColor dark:bg-darkkColor fixed top-0 left-0 w-full z-50">
         <nav className="container relative h-24 flex justify-between items-center">
             <div className="ms-4 md:text-3xl">
                 <Link href='/' className={`uppercase text-2xl ${oswald.className}`}>bur<span className="text-secondaryColor">ger</span></Link>
@@ -43,14 +46,13 @@ const Navbar = () => {
                         <Link href='#contact' onClick={()=> setIsMenu(false)}>Contact</Link>
                     </li>
                 <div className="me-4 text-white text-2xl cursor-pointer">
-                <BiMoon className="ml-4 cursor-pointer text-xl" />
                 </div>
                 </ul>
                 
             </div>
            {
             isMenu && (
-                <div className="md:hidden block absolute top-0 left-0 w-full py-14 bg-primaryColor border-b border-yellow-500">
+                <div className="md:hidden block absolute top-0 left-0 w-full py-14 bg-darkkColor border-b border-yellow-500">
                 <ul className="flex flex-col gap-5 text-center">
                     <li className="text-white hover:text-secondaryColor ease-in duration-200">
                         <Link href='/' onClick={()=> setIsMenu(false)}>Home</Link>
@@ -75,7 +77,6 @@ const Navbar = () => {
             )
            }
             <div className="md:hidden flex items-center gap-5 text-white me-4">
-                <BiMoon className="ml-4 cursor-pointer text-xl" />
                 <div className="md:hidden cursor-pointer text-xl" onClick={toggleMenu}>
                     <HiMenuAlt1 />
                 </div>

@@ -157,7 +157,7 @@ export default function Home() {
       <section id="promo">
         <div className="container flex flex-col gap-5 lg:flex-row lg:gap-10">
           {/* card-1 */}
-          <div className="bg-primaryColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1 ">
+          <div className="bg-darkColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1 ">
             <Image
               className="w-40 mx-auto hover:animate-movingY md:mx-5"
               src="/assets/img/promo-1.png"
@@ -178,7 +178,7 @@ export default function Home() {
             </div>
           </div>
           {/* card-2 */}
-          <div className="bg-primaryColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1 ">
+          <div className="bg-darkColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1 ">
             <Image
               className="w-40 mx-auto hover:animate-movingY md:mx-5"
               src="/assets/img/promo-2.png"
@@ -260,7 +260,7 @@ export default function Home() {
             <div className="tabs_wrap">
               <ul className="flex flex-wrap justify-center gap-3 py-10">
                 <li
-                  className={`btn bg-primaryColorLight ${
+                  className={`btn bg-darkColorLight ${
                     isActive === 1 ? "active" : ""
                   }`}
                   onClick={() => handleActive(1)}
@@ -268,7 +268,7 @@ export default function Home() {
                   All
                 </li>
                 <li
-                  className={`btn bg-primaryColorLight ${
+                  className={`btn bg-darkColorLight ${
                     isActive === 2 ? "active" : ""
                   }`}
                   onClick={() => handleActive(2)}
@@ -276,7 +276,7 @@ export default function Home() {
                   Food
                 </li>
                 <li
-                  className={`btn bg-primaryColorLight ${
+                  className={`btn bg-darkColorLight ${
                     isActive === 3 ? "active" : ""
                   }`}
                   onClick={() => handleActive(3)}
@@ -284,7 +284,7 @@ export default function Home() {
                   Snack
                 </li>
                 <li
-                  className={`btn bg-primaryColorLight ${
+                  className={`btn bg-darkColorLight ${
                     isActive === 4 ? "active" : ""
                   }`}
                   onClick={() => handleActive(4)}
@@ -301,7 +301,7 @@ export default function Home() {
                 {all.map((item, index) => {
                   return (
                     <li key={index} className="item_wrap">
-                      <div className="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+                      <div className="h-56 grid place-items-center bg-darkColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
                         <Image
                           className="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24"
                           src={item.image}
@@ -336,7 +336,7 @@ export default function Home() {
                 {food.map((item, index) => {
                   return (
                     <li key={index}>
-                      <div className="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+                      <div className="h-56 grid place-items-center bg-darkColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
                         <Image
                           className="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24"
                           src={item.image}
@@ -347,7 +347,7 @@ export default function Home() {
                       </div>
                       <div className="pt-5">
                         <div className="mb-2">
-                          <h4 className="card__title">{item.image}</h4>
+                          <h4 className="card__title">{item.title}</h4>
                           <p className="paragraph">
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit.
@@ -371,7 +371,7 @@ export default function Home() {
                 {snack.map((item, index) => {
                   return (
                     <li key={index}>
-                      <div className="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+                      <div className="h-56 grid place-items-center bg-darkColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
                         <Image
                           className="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24"
                           src={item.image}
@@ -406,7 +406,7 @@ export default function Home() {
                 {beverage.map((item, index) => {
                   return (
                     <li key={index}>
-                      <div className="h-56 grid place-items-center bg-primaryColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+                      <div className="h-56 grid place-items-center bg-darkColorLight rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
                         <Image
                           className="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24"
                           src={item.image}
@@ -436,7 +436,7 @@ export default function Home() {
       </section>
 
       {/* Review */}
-      <section id="review" className="bg-primaryColorLight py-20">
+      <section id="review" className="bg-darkColorLight py-20">
         <div className="container">
           <div className="max-w-md mx-auto text-center">
             <h2 className="section__title">customer review</h2>
@@ -477,7 +477,7 @@ export default function Home() {
             className="myswipper  mt-4"
           >
             <SwiperSlide>
-              <div className="flex flex-col gap-5 bg-primaryColor rounded-lg p-6">
+              <div className="flex flex-col gap-5 bg-darkkColor rounded-lg p-6">
                 <p className="paragraph">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
                   feugiat nibh ut sapien elementum hendrerit.
@@ -499,7 +499,7 @@ export default function Home() {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="flex flex-col gap-5 bg-primaryColor rounded-lg p-6">
+              <div className="flex flex-col gap-5 bg-darkkColor rounded-lg p-6">
                 <p className="paragraph">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
                   feugiat nibh ut sapien elementum hendrerit.
@@ -521,7 +521,7 @@ export default function Home() {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="flex flex-col gap-5 bg-primaryColor rounded-lg p-6">
+              <div className="flex flex-col gap-5 bg-darkkColor rounded-lg p-6">
                 <p className="paragraph">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
                   feugiat nibh ut sapien elementum hendrerit.
@@ -638,7 +638,7 @@ export default function Home() {
               </li>
             </ul>
 
-            <div className="flex flex-col items-center border-1 border-primaryColorLight py-5 md:flex-row md:justify-between">
+            <div className="flex flex-col items-center border-1 border-darkColorLight py-5 md:flex-row md:justify-between">
               <p className="paragraph">Burger Template Kit by Light Code</p>
               <p className="paragraph">Copyright &copy; 2023. All rights reserved.</p>
             </div>
