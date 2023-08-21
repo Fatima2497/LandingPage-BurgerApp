@@ -24,7 +24,7 @@ const Navbar = () => {
     return (
     <header className="bg-darkkColor dark:bg-darkkColor fixed top-0 left-0 w-full z-50">
         <nav className="container relative h-24 flex justify-between items-center">
-            <div className="ms-4 md:text-3xl">
+            <div className="ms-4 md:text-7xl">
                 <Link href='/' className={`uppercase text-2xl ${oswald.className}`}>bur<span className="text-secondaryColor">ger</span></Link>
             </div>
             <div className="hidden md:block md:static md:w-auto md:py-0 md:border-none md:ml-auto">
