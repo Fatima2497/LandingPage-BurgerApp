@@ -16,8 +16,7 @@ const Navbar = () => {
     
   const [isMenu, setIsMenu] = useState(false)
 
- 
-
+    
 
   const toggleMenu = () => {
     setIsMenu(true)
@@ -46,6 +45,7 @@ const Navbar = () => {
                         <Link href='#contact' onClick={()=> setIsMenu(false)}>Contact</Link>
                     </li>
                 <div className="me-4 text-white text-2xl cursor-pointer">
+                   
                 </div>
                 </ul>
                 

@@ -9,7 +9,7 @@ import { AiOutlineCheck,AiOutlineTwitter,AiFillInstagram, AiOutlineArrowUp } fro
 import { BiPaperPlane,BiLogoFacebook, BiSolidLocationPlus } from "react-icons/bi";
 import { useState } from "react";
 import { all, beverage, food, snack } from "@/help/Data";
-
+import { ThemeProvider } from "next-themes";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -31,7 +31,8 @@ export default function Home() {
 
   const handleActive = (btn) => setIsActive(btn);
   return (
-    <main>
+
+      <main>
       {/* Home */}
       <section>
         <div className="container flex flex-col md:flex-row items-center gap-10">
@@ -214,7 +215,7 @@ export default function Home() {
             />{" "}
           </div>
           <div className="flex-1">
-            <h2 className="section__title">
+            <h2 className={`section__title ${oswald.className}`}>
               FIND all AND DRINKS , ALL-IN-ONE PLACE FOR YOUR BEST TASTE.
             </h2>
             <div className="separator"></div>
@@ -251,7 +252,7 @@ export default function Home() {
       <section id="menu">
         <div className="container">
           <div className="max-w-md mx-auto text-center">
-            <h2 className="section__title">OUR BEST MENU</h2>
+            <h2 className={`section__title ${oswald.className}`}>OUR BEST MENU</h2>
             <div className="separator mx-auto"></div>
             <p className="paragraph">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
@@ -439,7 +440,7 @@ export default function Home() {
       <section id="review" className="bg-darkColorLight py-20">
         <div className="container">
           <div className="max-w-md mx-auto text-center">
-            <h2 className="section__title">customer review</h2>
+            <h2 className={`section__title ${oswald.className}`}>customer review</h2>
             <div className="separator mx-auto"></div>
             <p className="paragraph">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
@@ -550,7 +551,7 @@ export default function Home() {
       <section id="contact" className="bg-secondaryColor py-16">
         <div className="container flex flex-col gap-5 md:items-center md:flex-row">
           <div className="space-y-6 md:flex-1">
-            <h2 className="section__title text-blackColor">
+            <h2 className={`section__title text-blackColor ${oswald.className}`}>
               Get exclusive update
             </h2>
             <p className="text-sm">
@@ -651,5 +652,6 @@ export default function Home() {
         <AiOutlineArrowUp className="text-lg" />
       </Link> */}
     </main>
+  
   );
 }
