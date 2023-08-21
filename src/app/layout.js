@@ -1,9 +1,7 @@
-"use client"
+
 import Navbar from '@/components/Navbar'
 import './globals.css'
 import { DM_Sans } from 'next/font/google'
-
-
 
 const dmSans = DM_Sans({ 
   weight:['400','500','700'],
