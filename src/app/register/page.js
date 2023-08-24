@@ -83,7 +83,7 @@ export default function Home() {
               </div>
   
               <button className='btn btn-primary' onClick={signupHandle}>Sign up</button>
-              <Link className='text-secondaryColor text-xs ms-3' href='/register'>Already have Account?</Link>  
+              <Link className='text-secondaryColor text-xs ms-3' href='/login'>Already have Account?</Link>  
             </form>
           </div>
         </div>
