@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/firebase/auth";
 import Loader from "@/components/Loader";
 
-export default function home () {
+export default function Home () {
 
     const { authUser, isLoading, signOut } = useAuth();
     const router = useRouter();
@@ -14,7 +14,7 @@ export default function home () {
           router.push("/login");
         }
         
-    }, [authUser, isLoading]);
+    },[authUser, isLoading]);
 
     return !authUser ? (
         <Loader />
