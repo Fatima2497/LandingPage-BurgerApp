@@ -72,6 +72,9 @@ const Navbar = () => {
                     <li className="text-white hover:text-secondaryColor ease-in duration-200">
                         <Link href='#contact' onClick={()=> setIsMenu(false)}>Contact</Link>
                     </li>
+                    <li className="text-white hover:text-secondaryColor ease-in duration-200">
+                        <Link href='/login' onClick={()=> setIsMenu(false)}>Login</Link>
+                    </li>
                 </ul>
                 <div className="absolute top-[0.7rem] right-0 text-white text-2xl cursor-pointer">
                     <AiOutlineClose onClick={()=> setIsMenu(false)}/>
