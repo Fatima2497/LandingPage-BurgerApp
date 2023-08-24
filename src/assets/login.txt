@@ -1,0 +1,4 @@
+username:hashmif997
+password:OsI1aVX6Lm3F4OQG
+
+mongodb+srv://hashmif997:<password>@cluster0.fl75lmn.mongodb.net/

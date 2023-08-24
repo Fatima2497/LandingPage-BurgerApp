@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { DM_Sans } from "next/font/google";
+import { AuthUserProvider } from "@/firebase/auth";
 
 
 const dmSans = DM_Sans({
@@ -19,7 +20,7 @@ export default function RootLayout({ children }) {
      
         <body suppressHydrationWarning={true} className={dmSans.className}>
           <Navbar />
-          {children}
+          <AuthUserProvider>{children}</AuthUserProvider> 
         </body>
   
     </html>

@@ -30,7 +30,7 @@ const Navbar = () => {
             <div className="hidden md:block md:static md:w-auto md:py-0 md:border-none md:ml-auto">
                 <ul className="flex flex-col gap-5 text-center md:flex-row">
                     <li className="text-white hover:text-secondaryColor ease-in duration-200">
-                        <Link href='#home' onClick={()=> setIsMenu(false)}>Home</Link>
+                        <Link href='/' onClick={()=> setIsMenu(false)}>Home</Link>
                     </li>
                     <li className="text-white hover:text-secondaryColor ease-in duration-200">
                         <Link href='#about' onClick={()=> setIsMenu(false)}>About Us</Link>
@@ -43,6 +43,9 @@ const Navbar = () => {
                     </li>
                     <li className="text-white hover:text-secondaryColor ease-in duration-200">
                         <Link href='#contact' onClick={()=> setIsMenu(false)}>Contact</Link>
+                    </li>
+                    <li className="text-white hover:text-secondaryColor ease-in duration-200">
+                        <Link href='/login' onClick={()=> setIsMenu(false)}>Login</Link>
                     </li>
                 <div className="me-4 text-white text-2xl cursor-pointer">
                    
