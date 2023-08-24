@@ -67,7 +67,7 @@ export default function Home() {
   ): (
     <main className={`flex justify-center items-center min-h-screen `}>
         <div className='bg-darkColorLight p-10 text-center rounded-lg'>
-          <h3 className={`font-bold text-3xl ${oswald.className}`}>Login</h3>
+          <h3 className={`font-bold text-3xl ${oswald.className}`}>Sign up</h3>
           <div className='p-4 mt-6'>
           <div className='bg-darkkColor rounded-full p-2 mb-8 flex justify-center' >
             <FcGoogle className='text-3xl '/> <span className='ms-3 text-xl text-center' onClick={googleLogin}>Signup With Google</span></div>
